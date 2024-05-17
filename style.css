@@ -1,0 +1,295 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  /*background-image: url("sao_backround.jpg");  Sử dụng hình ảnh ngôi sao làm nền */
+  background-size: cover;
+  background-position: center;
+}
+@media (max-width: 768px) {
+  .navigation {
+    padding: 10px; /* Thêm padding để tạo không gian xung quanh */
+  }
+}
+.navigation {
+  position: fixed; /* Cho phần navigation cố định trên cùng */
+  top: 0; /* Đặt top về 0 để nằm trên cùng */
+  width: 100%;
+  height: 10%; /* Đảm bảo navigation chiếm toàn bộ chiều rộng */
+  z-index: 1000; /* Đặt z-index để navigation luôn hiển thị phía trên */
+  background-image: url("sao_backround.jpg"); /* Sử dụng hình ảnh ngôi sao làm nền */
+  background-size: cover;
+  background-position: center;
+}
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navigation ul li {
+  margin: 0 10px;
+}
+
+.navigation ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navigation ul li a:hover {
+  background-color: #5a6268;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+  color: red;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li a {
+  text-decoration: none;
+  color: #343a40;
+  font-size: 24px; /* Đặt kích thước chữ cho các mục là 24px */
+}
+
+/* Hiệu ứng chuyển động */
+@keyframes moveStars {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 1000px; /* Điểm cuối của chuyển động */
+  }
+}
+
+body,
+.navigation {
+  animation: moveStars 20s linear infinite; /* Thực hiện hiệu ứng chuyển động */
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  position: fixed; /* Cố định footer  cố định footer ở một vị trí tuyệt đối trong cửa sổ trình duyệt.*/
+  left: 0;
+  bottom: 0; /*à một thuộc tính được sử dụng để xác định vị trí dọc*/
+  width: 100%; /* giúp footer có chiều rộng bằng với chiều rộng của cửa sổ trình duyệt.*/
+}
+/* CSS cho hiệu ứng nhấp nháy của các biểu tượng icon */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.contact {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.contact a {
+  display: block; /* Hiển thị mỗi liên kết trên một dòng riêng */
+  margin: 20px auto; /* Tự động căn giữa theo chiều ngang và tạo khoảng cách giữa các dòng */
+  font-size: 24px;
+  color: blue;
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact a i {
+  vertical-align: middle; /* Căn giữa các biểu tượng theo chiều dọc */
+}
+
+.contact a:hover {
+  transform: translateY(
+    -10px
+  ); /* Áp dụng hiệu ứng nhảy nhót khi rê chuột qua */
+}
+.notification {
+  background-color: #f4eade;
+  color: #000;
+  padding: 20px;
+  position: fixed;
+  top: 22%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; /* Thay đổi chiều rộng của khung thông báo */
+  max-width: 800px; /* Đặt giá trị tối đa cho chiều rộng */
+  z-index: 1000;
+  text-align: center;
+  border-radius: 20px; /* Tăng độ cong của các góc */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Đổ bóng lớn hơn */
+}
+
+.notification .container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.notification h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.notification p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.notification .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.notification .close:hover {
+  color: #ff0000;
+}
+
+.snowflakes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.snowflake {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: none;
+  opacity: 0.5;
+  animation: fall 15s linear infinite;
+  user-select: none;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+.close-bottom-right {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  background-color: #007bff; /* Màu nền của nút */
+  color: #fff; /* Màu chữ của nút */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-bottom-right:hover {
+  background-color: #0056b3; /* Màu nền khi di chuột qua */
+}
+.content {
+  display: none; /* Ẩn phần nội dung ban đầu */
+}
+
+.notification.closed ~ .content {
+  display: block; /* Hiển thị nội dung khi thông báo đã đóng */
+}
+.visible {
+  display: block;
+}
+
+.image-left {
+  float: right; /* Đẩy hình về phía trái */
+  margin-left: 10%; /* Tạo khoảng cách giữa hình và văn bản */
+  margin-right: 10%; /* Đặt khoảng cách từ phía lề phải */
+  width: 20%;
+}
+.hoppy {
+  display: flex;
+}
+
+.hoppycontent {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.images-hoppy {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%; /* Tạo khoảng cách giữa hình và văn bản */
+  margin-right: 10%; /* Đặt khoảng cách từ phía lề phải */
+  width: 20%;
+}
+
+.images-hoppy img {
+  margin-bottom: 30px;
+}
+
+.hometown {
+  display: flex;
+  flex-direction: column;
+}
+
+.hometowncontent {
+  order: 1;
+}
+
+.images-hometown {
+  display: flex;
+  flex-wrap: wrap;
+  order: 2;
+  width: 80%; /* Thu nhỏ kích thước của ảnh */
+  margin-right: 50px; /* Tạo khoảng cách bên phải giữa các ảnh */
+}
+
+.images-hometown img {
+  max-width: 33.33%; /* Đảm bảo các hình ảnh có kích thước bằng nhau trên hàng ngang */
+}
+
+h2 {
+  display: block; /* Mặc định là block, không cần thiết */
+}
+
+.images-dream {
+  display: flex;
+}
+.images-dream img {
+  width: 40%; /* Đặt kích thước của hình ảnh */
+}
+
+.images-dream img + img {
+  margin-left: 10px; /* Thêm khoảng cách 10px giữa các hình ảnh */
+}
